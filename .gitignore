@@ -1,0 +1,25 @@
+# Fichiers générés par python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Environnements virtuel
+.venv
+ven
+.env
+env
+
+# Fichiers générés par l'IDE
+
+
+# Fichiers générés par l'éditeur de code
+.vscode
+
+# Fichiers générés par le système
+.DS_Store
+
+# Dossier de données
+data/
