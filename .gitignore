@@ -12,6 +12,9 @@ ven
 .env
 env
 
+# Fichiers générés par pytest
+.pytest_cache
+
 # Fichiers générés par l'IDE
 
 
