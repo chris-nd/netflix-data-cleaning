@@ -26,3 +26,9 @@ tag_format = "v$version"
 version_scheme = "pep440"
 version_provider = "uv"
 update_changelog_on_bump = true
+
+[dependency-groups]
+tests = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+]
