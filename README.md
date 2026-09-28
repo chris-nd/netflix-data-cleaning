@@ -29,7 +29,7 @@ Le fichier brut n'est pas versionné (licence Kaggle, reproductibilité plutôt 
 cleaning-netflix/
 ├── data/
 │   ├── raw/
-│   │   └── netflix_titles.csv       # jamais modifié après téléchargement
+│   │   └── netflix_titles_raw.csv       # jamais modifié après téléchargement
 │   └── clean/
 │       └── netflix_titles_clean.csv # généré par le notebook cleaning
 ├── notebooks/
@@ -38,16 +38,23 @@ cleaning-netflix/
 ├── src/
 │   └── cleaning_netflix/
 │       ├── __init__.py
-│       ├── io.py                    # load_raw(), save_clean()
+│       ├── column_types.py                    # load_raw(), save_clean()
+│       ├── dates.py                    # load_raw(), save_clean()
 │       ├── missing_values.py        # stratégies par colonne
-│       ├── types.py                 # parsing duration (types mixtes)
-│       └── dates.py                 # parsing date_added
+│       ├── pipeline.py                 # parsing duration (types mixtes)
+│       └── storage.py                 # parsing date_added
 ├── tests/
-│   └── test_*.py                    # pytest, un fichier par module de src/
+│   ├── test_column_types.py
+│   ├── test_dates.py
+│   ├── test_missing_values.py
+│   ├── test_pipeline.py
+│   └── test_storage.py
 ├── .gitignore
 ├── .python-version
+├── NOTES.md
 ├── pyproject.toml
-└── README.md
+├── README.md
+└── uv.lock
 ```
 
 ### La règle par dossier
@@ -68,3 +75,8 @@ uv run pytest                                  # lancer les tests
 ```
 
 Le CSV nettoyé est généré dans `data/clean/netflix_titles_clean.csv`.
+
+## Remerciements
+
+- [Shivam Bansal](https://www.kaggle.com/shivamb) pour avoir partagé ce dataset sur Kaggle.
+- [Roadmap.sh](https://roadmap.sh/projects/cleaning-netflix-dataset) pour avoir mis à disposition ce projet de nettoyage de dataset.
