@@ -10,8 +10,8 @@ def parse_date_added(df: pd.DataFrame) -> pd.DataFrame:
 
     Choix de conception :
     - `errors='raise'` plutôt que `errors='coerce'` : avec `coerce`, 88 dates valides
-    (espace en début de chaîne) étaient devenues NaT sans aucun signal.
-    Un format inattendu doit faire échouer le pipeline, pas perdre des lignes.
+      (espace en début de chaîne) étaient devenues NaT sans aucun signal.
+      Un format inattendu doit faire échouer le pipeline, pas perdre des lignes.
     - Format explicite ('%B %d, %Y') plutôt qu'inféré : le contrat est lisible
       et ne dépend pas des premières lignes du fichier.
     - Les NaN d'origine (10 TV Show sans date) deviennent NaT sans erreur :
