@@ -12,9 +12,7 @@ def sample_data():
     Fixture pour créer un DataFrame d'exemple.
     """
 
-    return pd.DataFrame({
-        "date_added": ["January 1, 2020", " February 1, 2020", None]
-    })
+    return pd.DataFrame({"date_added": ["January 1, 2020", " February 1, 2020", None]})
 
 
 def test_parse_date_added(sample_df):
@@ -37,12 +35,7 @@ def test_parse_date_added(sample_df):
 
 
 @pytest.mark.parametrize(
-        "date", [
-            "2021-09-25", 
-            "09/25/2021", 
-            "25/09/2021", 
-            "Sat, 25 Sep 21"
-        ]
+    "date", ["2021-09-25", "09/25/2021", "25/09/2021", "Sat, 25 Sep 21"]
 )
 def test_format_inattendu_leve_une_erreur(date):
     """

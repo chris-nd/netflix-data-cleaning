@@ -24,7 +24,7 @@ def test_load_raw_lit_le_csv(tmp_path):
             "rating": ["PG-13", "TV-MA"],
             "duration": ["90 min", "2 Seasons"],
             "listed_in": ["Dramas", "International Movies"],
-            "description": ["Description 1", "Description 2"]
+            "description": ["Description 1", "Description 2"],
         }
     )
 
@@ -52,11 +52,11 @@ def test_save_clean_cree_le_dossier_et_ecrit(tmp_path):
             "rating": ["PG-13", "TV-MA"],
             "duration": ["90 min", "2 Seasons"],
             "listed_in": ["Dramas", "International Movies"],
-            "description": ["Description 1", "Description 2"]
+            "description": ["Description 1", "Description 2"],
         }
     )
 
-    out = tmp_path / "data" / "clean" / "out.csv"   # dossier inexistant
+    out = tmp_path / "data" / "clean" / "out.csv"  # dossier inexistant
 
     save_clean(df, out)
 

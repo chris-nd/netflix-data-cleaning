@@ -15,13 +15,15 @@ def sample_data() -> pd.DataFrame:
     """DataFrame synthétique couvrant les cas rencontrés dans l'analyse :
     valeurs manquantes normales + le cas de décalage type Louis C.K.
     (rating contient une durée, duration est vide)."""
-    return pd.DataFrame({
-        "director": ["Jane Doe", None, "John Smith"],
-        "cast": ["A, B", None, "C, D"],
-        "country": ["France", None, "USA"],
-        "rating": ["PG-13", "TV-MA", "74 min"],   # ligne 2 = cas Louis C.K.
-        "duration": ["90 min", "2 Seasons", None], # ligne 2 = duration vide
-    })
+    return pd.DataFrame(
+        {
+            "director": ["Jane Doe", None, "John Smith"],
+            "cast": ["A, B", None, "C, D"],
+            "country": ["France", None, "USA"],
+            "rating": ["PG-13", "TV-MA", "74 min"],  # ligne 2 = cas Louis C.K.
+            "duration": ["90 min", "2 Seasons", None],  # ligne 2 = duration vide
+        }
+    )
 
 
 def test_fill_missing_categoricals_impute_les_bonnes_valeurs(sample_df):

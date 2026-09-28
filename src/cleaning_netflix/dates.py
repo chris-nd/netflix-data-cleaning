@@ -5,7 +5,7 @@ import pandas as pd
 
 def parse_date_added(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Convertit `date_added` en datetime et extrait le mois et 
+    Convertit `date_added` en datetime et extrait le mois et
     l'année dans ces colonnes respectives `month_added` et `year_added`.
 
     Choix de conception :
@@ -16,7 +16,7 @@ def parse_date_added(df: pd.DataFrame) -> pd.DataFrame:
       et ne dépend pas des premières lignes du fichier.
     - Les NaN d'origine (10 TV Show sans date) deviennent NaT sans erreur :
       c'est une absence structurelle, pas une conversion échouée.
-    - `month_added` et `year_added` sont convertis en un type Int64 nullable 
+    - `month_added` et `year_added` sont convertis en un type Int64 nullable
       pour tolérer ces NaT.
 
     :param df: DataFrame contenant la colonne `date_added` en `str`.
@@ -27,8 +27,10 @@ def parse_date_added(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.copy()
 
-    df['date_added'] = pd.to_datetime(df['date_added'].str.strip(), format='%B %d, %Y', errors='raise')
-    df['month_added'] = df['date_added'].dt.month.astype(pd.Int64Dtype())
-    df['year_added'] = df['date_added'].dt.year.astype(pd.Int64Dtype())
+    df["date_added"] = pd.to_datetime(
+        df["date_added"].str.strip(), format="%B %d, %Y", errors="raise"
+    )
+    df["month_added"] = df["date_added"].dt.month.astype(pd.Int64Dtype())
+    df["year_added"] = df["date_added"].dt.year.astype(pd.Int64Dtype())
 
     return df

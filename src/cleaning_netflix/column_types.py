@@ -18,19 +18,17 @@ def split_duration(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.copy()
 
-    mask_movie = df['type'] == 'Movie'
+    mask_movie = df["type"] == "Movie"
 
-    df['duration_minutes'] = np.nan
-    df['duration_seasons'] = np.nan
+    df["duration_minutes"] = np.nan
+    df["duration_seasons"] = np.nan
 
-    df.loc[mask_movie, 'duration_minutes'] = pd.to_numeric(
-        df.loc[mask_movie, 'duration'].str.extract(r'(\d+)')[0],
-        errors='coerce'
+    df.loc[mask_movie, "duration_minutes"] = pd.to_numeric(
+        df.loc[mask_movie, "duration"].str.extract(r"(\d+)")[0], errors="coerce"
     )
 
-    df.loc[~mask_movie, 'duration_seasons'] = pd.to_numeric(
-        df.loc[~mask_movie, 'duration'].str.extract(r'(\d+)')[0],
-        errors='coerce'
+    df.loc[~mask_movie, "duration_seasons"] = pd.to_numeric(
+        df.loc[~mask_movie, "duration"].str.extract(r"(\d+)")[0], errors="coerce"
     )
 
-    return df.drop(columns='duration')
+    return df.drop(columns="duration")

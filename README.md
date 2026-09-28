@@ -29,7 +29,7 @@ Le fichier brut n'est pas versionné (licence Kaggle, reproductibilité plutôt 
 cleaning-netflix/
 ├── data/
 │   ├── raw/
-│   │   └── netflix_titles_raw.csv       # jamais modifié après téléchargement
+│   │   └── netflix_titles_raw.csv   # jamais modifié après téléchargement
 │   └── clean/
 │       └── netflix_titles_clean.csv # généré par le notebook cleaning
 ├── notebooks/
@@ -38,11 +38,11 @@ cleaning-netflix/
 ├── src/
 │   └── cleaning_netflix/
 │       ├── __init__.py
-│       ├── column_types.py                    # load_raw(), save_clean()
-│       ├── dates.py                    # load_raw(), save_clean()
+│       ├── column_types.py          # load_raw(), save_clean()
+│       ├── dates.py                 # load_raw(), save_clean()
 │       ├── missing_values.py        # stratégies par colonne
-│       ├── pipeline.py                 # parsing duration (types mixtes)
-│       └── storage.py                 # parsing date_added
+│       ├── pipeline.py              # parsing duration (types mixtes)
+│       └── storage.py               # parsing date_added
 ├── tests/
 │   ├── test_column_types.py
 │   ├── test_dates.py

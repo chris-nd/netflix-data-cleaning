@@ -14,10 +14,12 @@ def sample_data() -> pd.DataFrame:
     un TV Show normal, et un Movie avec duration manquante (cas limite).
     """
 
-    return pd.DataFrame({
-        "type": ["Movie", "TV Show", "Movie"],
-        "duration": ["90 min", "2 Seasons", None],
-    })
+    return pd.DataFrame(
+        {
+            "type": ["Movie", "TV Show", "Movie"],
+            "duration": ["90 min", "2 Seasons", None],
+        }
+    )
 
 
 def test_split_duration_extrait_les_bonnes_valeurs(sample_df):
@@ -44,7 +46,7 @@ def test_split_duration_extrait_les_bonnes_valeurs(sample_df):
 def test_split_duration_ne_modifie_pas_l_original(sample_df):
     """
     Garantit l'absence d'effet de bord sur le DataFrame passé en paramètre.
-    
+
     :param sample_df: DataFrame de test
     """
 

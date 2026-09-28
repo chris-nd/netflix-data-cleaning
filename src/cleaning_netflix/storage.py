@@ -1,4 +1,3 @@
-
 "Entrées/sorties : lecture du CSV brut, écriture du CSV nettoyé."
 
 from pathlib import Path
