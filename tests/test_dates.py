@@ -1,10 +1,9 @@
 "Module de test pour la gestion des dates"
 
-import numpy as np
 import pandas as pd
 import pytest
 
-from src.cleaning_netflix.dates import parse_date_added
+from cleaning_netflix.dates import parse_date_added
 
 
 @pytest.fixture(name="sample_df")
@@ -18,7 +17,7 @@ def sample_data():
     })
 
 
-def test_parse_data_added(sample_df):
+def test_parse_date_added(sample_df):
     """
     Vérifie que la fonction parse_date_added fonctionne correctement.
 
@@ -63,7 +62,7 @@ def test_date_type(sample_df):
 
     :param sample_df: DataFrame d'exemple.
     """
-    
+
     result = parse_date_added(sample_df)
 
     assert pd.api.types.is_datetime64_any_dtype(result["date_added"])
