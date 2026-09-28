@@ -3,7 +3,7 @@
 import pandas as pd
 import pytest
 
-from src.cleaning_netflix.types import split_duration
+from cleaning_netflix.column_types import split_duration
 
 
 # Fixture synthétique
